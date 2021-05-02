@@ -48,7 +48,14 @@ function Navigation() {
     const [theme, setTheme] = useContext(ThemeContext)
     const [navSelect, setNavSelect] = useContext(NavContext)
 
-    const socialIcons= [ig, twi, git, what]
+    // const socialIcons= [ig, twi, git, what]
+
+    const socialIcons= [
+        {icon: ig, link: 'https://www.instagram.com/gates_vert?r=nametag'},
+        {icon: twi, link: "https://www.twitter.com/blaq_xcobar"},
+        {icon: git, link: "https://github.com/Gatesvert81"},
+        {icon: what, link: "https://wa.me/+233505920929"},
+        ]
 
     const variants = {
         visible: { opacity: 1, y: 0 },
@@ -103,10 +110,10 @@ function Navigation() {
                         </NavWrapper>
                         <NavWrapper className="nav__social">
                             {
-                                socialIcons.map((icon, index) => (
-                                    <Button key={index} className="icon" >
-                                        <StyledImage src={icon} alt="icon"  width={30} height={30} className="icon__image"/>
-                                    </Button>
+                                socialIcons.map((social, index) => (
+                                    <Linked key={index}  pass={true} target={true} to={social.link} className="icon" >
+                                        <StyledImage src={social.icon} alt="icon"  width={30} height={30} className="icon__image"/>
+                                    </Linked>
                                 ))
                             }
                         </NavWrapper>

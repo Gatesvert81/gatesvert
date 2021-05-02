@@ -32,6 +32,7 @@ const NavWrapper = styled.div`
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        min-width: 50%;
     }
 
     &.nav__btn, &.nav__btn__open{
